@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5S8B3HW8');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17892072580"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17892072580');
+  </script>
+  <title>Top Marketing BH — Qualificação</title>
+  <link rel="icon" href="/icon.png" sizes="any" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #f97316;
+      --orange-hover: #ea580c;
+      --blue: #2563EB;
+      --text: #111827;
+      --text-muted: #6b7280;
+      --bg: #ffffff;
+      --border: #e5e7eb;
+      --bg-hover: #f9fafb;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      height: 100dvh;
+      overflow: hidden;
+    }
+    
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      position: relative;
+    }
+    .back-btn {
+      position: absolute;
+      left: 1.5rem;
+      background: #f3f4f6;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #374151;
+      transition: background 0.2s;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .back-btn.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .back-btn:hover {
+      background: #e5e7eb;
+    }
+    .logo {
+      height: 45px;
+      width: auto;
+      filter: brightness(0) saturate(100%) invert(33%) sepia(76%) saturate(2222%) hue-rotate(208deg) brightness(96%) contrast(98%);
+    }
+
+    /* Container Principal */
+    .form-container {
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      height: calc(100dvh - 80px);
+      position: relative;
+    }
+
+    /* Etapas */
+    .step {
+      display: none;
+      animation: fadeIn 0.4s ease forwards;
+    }
+    .step.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Tipografia */
+    .question-title {
+      font-size: clamp(1.4rem, 4vw, 1.8rem);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+      color: #111;
+    }
+    .question-title span {
+      color: #ef4444; /* Asterisco vermelho */
+    }
+    .question-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    /* Botões de Múltipla Escolha (Radios) */
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .option-btn {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      cursor: pointer;
+      text-align: left;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #374151;
+      transition: all 0.2s;
+    }
+    .option-btn:hover {
+      background: var(--bg-hover);
+      border-color: #d1d5db;
+    }
+    .option-letter {
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #6b7280;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+    
+    /* Inputs de Texto */
+    .input-group {
+      margin-top: 2rem;
+    }
+    .minimal-input {
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid #fbd38d; /* Laranja clarinho base */
+      padding: 10px 0;
+      font-size: 1.2rem;
+      color: #111;
+      outline: none;
+      background: transparent;
+      transition: border-color 0.3s;
+    }
+    .minimal-input:focus {
+      border-bottom-color: var(--orange);
+    }
+    .minimal-input::placeholder {
+      color: #d1d5db;
+    }
+
+    /* Botão de Continuar */
+    .continue-btn {
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 2rem;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .continue-btn:hover {
+      background: var(--orange-hover);
+    }
+    .hint {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+    
+    /* Ajuste para input com prefixo (whatsapp) */
+    .phone-input-wrapper {
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid #fbd38d;
+      transition: border-color 0.3s;
+    }
+    .phone-input-wrapper:focus-within {
+      border-bottom-color: var(--orange);
+    }
+    .phone-prefix {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 1.1rem;
+      color: #374151;
+      padding-right: 10px;
+    }
+    .phone-input-wrapper input {
+      border: none;
+      flex: 1;
+    }
+    .phone-input-wrapper input:focus {
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <button class="back-btn" id="btnBack" onclick="prevStep()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <img src="logo_top.png" alt="Top Marketing BH" class="logo" />
+  </header>
+
+  <main class="form-container">
+    
+    <!-- STEP 1: Nome -->
+    <div class="step active" id="step1">
+      <h2 class="question-title">Qual seu nome e sobrenome? <span>*</span></h2>
+      <div class="input-group">
+        <input type="text" id="inputNome" class="minimal-input" placeholder="Digite seu nome..." />
+      </div>
+      <button class="continue-btn" onclick="nextStep(1)">Continuar</button>
+      <span class="hint">pressione <strong>Enter ↵</strong></span>
+    </div>
+
+    <!-- STEP 2: WhatsApp -->
+    <div class="step" id="step2">
+      <h2 class="question-title">Qual seu número do WhatsApp? <span>*</span></h2>
+      <div class="input-group">
+        <div class="phone-input-wrapper">
+          <div class="phone-prefix">
+            <span>🇧🇷</span> +55
+          </div>
+          <input type="tel" id="inputWhats" class="minimal-input" placeholder="(00) 00000-0000" maxlength="15" />
+        </div>
+      </div>
+      <button class="continue-btn" onclick="nextStep(2)">Continuar</button>
+      <span class="hint">pressione <strong>Enter ↵</strong></span>
+    </div>
+
+    <!-- STEP 3: Investimento -->
+    <div class="step" id="step3">
+      <h2 class="question-title">Está disposto a investir pelo menos <strong>R$1.500/mês</strong> em anúncios, desconsiderando o valor da nossa mão de obra? <span>*</span></h2>
+      <div class="options-list" style="margin-top: 2rem;">
+        <button class="option-btn" onclick="selectOption('investimento', 'Sim', 3)">
+          <span class="option-letter">A</span> ✅ Sim! Preciso de tráfego profissional.
+        </button>
+        <button class="option-btn" onclick="selectOption('investimento', 'Não', 3)">
+          <span class="option-letter">B</span> ❌ Não quero investir no meu negócio.
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Instagram -->
+    <div class="step" id="step4">
+      <h2 class="question-title">Qual @ do Instagram da sua empresa? <span>*</span></h2>
+      <p class="question-desc">Digite somente o user, <strong>sem o @ e sem espaços</strong>, por favor.</p>
+      <div class="input-group">
+        <input type="text" id="inputInsta" class="minimal-input" placeholder="exemplo.oficial" />
+      </div>
+      <button class="continue-btn" onclick="submitForm()">Finalizar</button>
+      <span class="hint">pressione <strong>Enter ↵</strong></span>
+    </div>
+
+  </main>
+
+  <!-- Mascara do Whatsapp simplificada -->
+  <script>
+    const inputWhats = document.getElementById('inputWhats');
+    inputWhats.addEventListener('input', function (e) {
+      let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+      e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+    });
+  </script>
+
+  <!-- Lógica do Formulário -->
+  <script>
+    let currentStep = 1;
+    const totalSteps = 4;
+    const formData = {
+      nome: '',
+      whatsapp: '',
+      investimento: '',
+      instagram: ''
+    };
+
+    function updateView() {
+      // Esconder todos
+      for(let i=1; i<=totalSteps; i++) {
+        document.getElementById(`step${i}`).classList.remove('active');
+      }
+      // Mostrar atual
+      document.getElementById(`step${currentStep}`).classList.add('active');
+      
+      // Mostrar/Esconder botão de voltar
+      const btnBack = document.getElementById('btnBack');
+      if(currentStep > 1) {
+        btnBack.classList.add('visible');
+      } else {
+        btnBack.classList.remove('visible');
+      }
+
+      // Focar input se existir na etapa atual
+      const currentInput = document.querySelector(`#step${currentStep} input`);
+      if(currentInput) {
+        setTimeout(() => currentInput.focus(), 100);
+      }
+    }
+
+    function selectOption(field, value, step) {
+      formData[field] = value;
+      currentStep = step + 1;
+      updateView();
+    }
+
+    function nextStep(step) {
+      if(step === 1) {
+        const nome = document.getElementById('inputNome').value.trim();
+        if(!nome) return alert('Por favor, digite seu nome.');
+        formData.nome = nome;
+      }
+      if(step === 2) {
+        const whats = document.getElementById('inputWhats').value.trim();
+        if(whats.length < 14) return alert('Por favor, digite um WhatsApp válido.');
+        formData.whatsapp = whats;
+      }
+      currentStep = step + 1;
+      updateView();
+    }
+
+    function prevStep() {
+      if(currentStep > 1) {
+        currentStep--;
+        updateView();
+      }
+    }
+
+    function submitForm() {
+      const insta = document.getElementById('inputInsta').value.trim();
+      if(!insta) return alert('Por favor, digite o Instagram da empresa.');
+      formData.instagram = insta;
+
+      // Montar mensagem para WhatsApp
+      const texto = `Olá! Vim pelo formulário de qualificação.
+*Nome:* ${formData.nome}
+*WhatsApp:* ${formData.whatsapp}
+*Instagram:* @${formData.instagram}
+*Disposto a investir +R$1.500:* ${formData.investimento}`;
+
+      const textEncoded = encodeURIComponent(texto);
+      const whatsAppLink = `https://wa.me/553197922538?text=${textEncoded}`;
+      
+      // Redirecionar
+      window.location.href = whatsAppLink;
+    }
+
+    // Permitir avançar com "Enter"
+    document.addEventListener('keypress', function(e) {
+      if(e.key === 'Enter') {
+        if(currentStep === 1) nextStep(1);
+        else if(currentStep === 2) nextStep(2);
+        else if(currentStep === 4) submitForm();
+      }
+    });
+  </script>
+</body>
+</html>

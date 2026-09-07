@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5S8B3HW8');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Google Ads / GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17892072580"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17892072580');
+  </script>
+  <!-- End Google Ads / GA4 -->
+  <title>Top Marketing BH — Geramos clientes qualificados para o seu negócio</title>
+  <meta name="description" content="Geramos até 10 novos potenciais clientes por dia para o seu negócio por meio do nosso funil validado. Agende agora com a Top Marketing BH." />
+  <meta name="theme-color" content="#161513" />
+  <link rel="icon" href="/icon.png" sizes="any" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/captacao.min.css?v=8" />
+  <style>
+    /* ======================================================
+       DESIGN SYSTEM — TOP MARKETING BH / OFERTA-497
+    ====================================================== */
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+    :root {
+      --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+      --font-sans:    "Plus Jakarta Sans", system-ui, sans-serif;
+
+      /* Palette */
+      --blue:         #2563EB;
+      --blue-bright:  #3B82F6;
+      --blue-glow:    rgba(37,99,235,0.35);
+      --bg:           #0A0C10;
+      --surface:      #111318;
+      --surface-2:    #161A22;
+      --border:       rgba(255,255,255,0.07);
+      --border-blue:  rgba(37,99,235,0.3);
+      --text:         #E8EAF0;
+      --text-muted:   rgba(232,234,240,0.55);
+      --text-dim:     rgba(232,234,240,0.35);
+
+      --radius-sm:  8px;
+      --radius-md:  14px;
+      --radius-lg:  20px;
+      --radius-xl:  28px;
+    }
+
+    *, *::before, *::after {
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif !important;
+      box-sizing: border-box;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg) !important;
+      color: var(--text) !important;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== NAVBAR ===== */
+    .nav {
+      background: rgba(10,12,16,0.7) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border-bottom: 1px solid var(--border) !important;
+      height: 68px !important;
+    }
+    .nav.is-scrolled {
+      background: rgba(10,12,16,0.9) !important;
+      border-bottom-color: var(--border-blue) !important;
+    }
+    .nav__inner { max-width: 1200px !important; }
+
+    /* ===== HERO ===== */
+    .hero.lphero::before {
+      background:
+        radial-gradient(65% 55% at 50% 0%, rgba(37,99,235,0.22), transparent 70%),
+        radial-gradient(100% 80% at 50% 100%, rgba(10,12,16,0.95), transparent) !important;
+    }
+    .hero__scrim {
+      background:
+        radial-gradient(120% 100% at 50% 50%, transparent 30%, rgba(10,12,16,0.7) 100%),
+        linear-gradient(180deg, rgba(10,12,16,0.5) 0%, transparent 25%, transparent 70%, rgba(10,12,16,1) 100%) !important;
+    }
+    .lphero__title {
+      font-size: clamp(1.8rem, 5.5vw, 3.8rem) !important;
+      letter-spacing: -0.03em !important;
+      line-height: 1.1 !important;
+      color: #FFFFFF !important;
+    }
+    .lphero__sub {
+      color: var(--text-muted) !important;
+      font-size: clamp(1rem, 1.5vw, 1.15rem) !important;
+      font-weight: 500 !important;
+    }
+    .accent { color: var(--blue-bright) !important; }
+
+    /* ===== SECTIONS ===== */
+    .lpsection {
+      background: var(--bg) !important;
+      padding: clamp(5rem, 10vh, 8rem) clamp(1.25rem, 4vw, 3rem) !important;
+    }
+    .lpsection:nth-child(even) { background: var(--surface) !important; }
+
+    .lpsection__title {
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem) !important;
+      letter-spacing: -0.025em !important;
+      color: #FFFFFF !important;
+      font-weight: 800 !important;
+    }
+    .lpsection__sub {
+      color: var(--text-muted) !important;
+      font-size: clamp(1rem, 1.3vw, 1.1rem) !important;
+      font-weight: 400 !important;
+    }
+
+    /* ===== AUDIENCE CARDS ===== */
+    .audience { gap: clamp(0.75rem, 1.5vw, 1.25rem) !important; }
+    .audience__card {
+      background: var(--surface) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-md) !important;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s !important;
+      box-shadow: none !important;
+    }
+    .audience__card:hover {
+      border-color: var(--border-blue) !important;
+      transform: translateY(-5px) !important;
+      box-shadow: 0 20px 50px -20px rgba(37,99,235,0.4) !important;
+      background: var(--surface-2) !important;
+    }
+    .audience__ic {
+      background: rgba(37,99,235,0.1) !important;
+      border: 1px solid rgba(37,99,235,0.2) !important;
+      color: var(--blue-bright) !important;
+      border-radius: var(--radius-sm) !important;
+    }
+    .audience__label {
+      color: var(--text) !important;
+      font-size: 0.95rem !important;
+      font-weight: 600 !important;
+    }
+
+    /* ===== RESULTS CARDS ===== */
+    .results { gap: clamp(0.75rem, 1.5vw, 1.25rem) !important; }
+    .result {
+      background: var(--surface) !important;
+      border: 1px solid var(--border) !important;
+      border-left: 2px solid var(--blue) !important;
+      border-radius: var(--radius-md) !important;
+      transition: transform 0.2s, background 0.2s !important;
+    }
+    .result:hover {
+      transform: translateY(-3px) !important;
+      background: var(--surface-2) !important;
+    }
+    .result__name { color: var(--text-muted) !important; font-size: 0.9rem !important; font-weight: 500 !important; margin-bottom: 0.5rem !important; }
+    .result__value {
+      color: #FFFFFF !important;
+      font-size: clamp(1rem, 1.6vw, 1.25rem) !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.01em !important;
+    }
+    .result__value::before { background: var(--blue-bright) !important; box-shadow: 0 0 10px rgba(59,130,246,0.8) !important; }
+
+    .results__note {
+      background: rgba(37,99,235,0.06) !important;
+      border: 1px solid rgba(37,99,235,0.2) !important;
+      border-radius: var(--radius-md) !important;
+    }
+    .results__note strong { color: var(--blue-bright) !important; }
+    .results__note p { color: var(--text-muted) !important; }
+
+    /* ===== DELIVERABLES ===== */
+    .deliverable {
+      background: var(--surface) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-xl) !important;
+      padding: 1rem 1.5rem !important;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s !important;
+    }
+    .deliverable:hover {
+      border-color: var(--border-blue) !important;
+      background: var(--surface-2) !important;
+      transform: translateX(8px) !important;
+    }
+    .deliverable__ic {
+      background: rgba(37,99,235,0.12) !important;
+      color: var(--blue-bright) !important;
+      border-radius: 50% !important;
+    }
+    .deliverable__text { color: var(--text) !important; font-weight: 500 !important; }
+
+    /* ===== CTA BUTTONS ===== */
+    .btn--cta {
+      background: var(--blue) !important;
+      border-radius: 999px !important;
+      font-size: clamp(1rem, 1.6vw, 1.15rem) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0 !important;
+      padding: 1rem 2.4rem !important;
+      box-shadow: 0 8px 30px -8px rgba(37,99,235,0.6) !important;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s !important;
+      animation: none !important;
+    }
+    .btn--cta:hover {
+      background: var(--blue-bright) !important;
+      transform: translateY(-3px) scale(1.02) !important;
+      box-shadow: 0 14px 40px -8px rgba(59,130,246,0.7) !important;
+    }
+    .btn--primary {
+      background: var(--blue) !important;
+      border-radius: 999px !important;
+      font-weight: 700 !important;
+    }
+    .btn--primary:hover { background: var(--blue-bright) !important; }
+
+    /* ===== TESTIMONIALS SECTION ===== */
+    .testi {
+      background: var(--bg) !important;
+      padding: clamp(5rem, 10vh, 8rem) 0 !important;
+    }
+    .testi__eyebrow {
+      color: var(--blue-bright) !important;
+      background: rgba(37,99,235,0.1) !important;
+      border: 1px solid rgba(37,99,235,0.22) !important;
+      border-radius: 999px !important;
+      font-size: 0.7rem !important;
+      letter-spacing: 0.14em !important;
+    }
+    .testi__title {
+      color: #FFFFFF !important;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem) !important;
+      letter-spacing: -0.025em !important;
+    }
+
+    /* Carrossel auto */
+    .testi__controls { display: none !important; }
+    .testi__viewport { overflow: hidden !important; }
+    .testi__track {
+      display: flex !important;
+      gap: 20px !important;
+      width: max-content !important;
+      animation: marquee-scroll 35s linear infinite !important;
+    }
+    .testi__track:hover { animation-play-state: paused !important; }
+    @keyframes marquee-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Imagens soltas */
+    .testi__slide {
+      flex: 0 0 auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    .testi__slide img {
+      height: 480px !important;
+      width: auto !important;
+      object-fit: contain !important;
+      border: none !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+      display: block !important;
+      transition: transform 0.3s !important;
+    }
+    .testi__slide:hover img { transform: scale(1.02) !important; }
+
+    /* ===== FOOTER ===== */
+    .foot {
+      background: var(--surface) !important;
+      border-top: 1px solid var(--border) !important;
+    }
+    .foot__copy, .foot__links a { color: var(--text-dim) !important; }
+    .foot__links a:hover { color: var(--text) !important; }
+    .foot__loc-body p, .foot__about p, .foot__details p { color: var(--text-muted) !important; }
+
+    /* ===== REVEAL ANIMATION ===== */
+    .reveal {
+      opacity: 0 !important;
+      transform: translateY(20px) !important;
+      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1) !important;
+    }
+    .reveal.is-visible {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    /* ===== SEPARADORES ===== */
+    .lpsection__head { margin-bottom: clamp(2.5rem, 5vw, 4rem) !important; }
+    .lpsection__cta { margin-top: clamp(2.5rem, 5vw, 3.5rem) !important; }
+    /* ===== MODAL ===== */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .modal-overlay.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-content {
+      background: #1c1a17; /* Dark brownish gray similar to screenshot */
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 480px;
+      width: 90%;
+      position: relative;
+      transform: translateY(20px) scale(0.95);
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    }
+    .modal-overlay.is-active .modal-content {
+      transform: translateY(0) scale(1);
+    }
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s;
+    }
+    .modal-close:hover {
+      color: #fff;
+    }
+    .modal-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #F3F3F3;
+      margin-bottom: 1rem;
+      padding-right: 2rem;
+      letter-spacing: -0.02em;
+    }
+    .modal-text {
+      color: #a0a0a0;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+    .modal-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .modal-btn {
+      flex: 1;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .modal-btn--no {
+      background: #252320;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .modal-btn--no:hover {
+      background: #2f2d29;
+    }
+    .modal-btn--yes {
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      box-shadow: 0 0 20px rgba(37,99,235,0.4);
+    }
+    .modal-btn--yes:hover {
+      background: var(--blue-bright);
+      box-shadow: 0 0 25px rgba(59,130,246,0.6);
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5S8B3HW8"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#topo" class="brand" aria-label="Top Marketing BH">
+        <img src="logo_top.png" alt="Top Marketing BH" style="height:32px; width:auto; display:block;" />
+      </a>
+      <a href="https://wa.me/553197922538?text=Olá!%20Quero%20agendar%20agora." target="_blank" rel="noopener" class="btn btn--primary nav__cta">
+        Agendar agora
+      </a>
+    </div>
+  </header>
+
+  <main id="topo">
+    <!-- HERO -->
+    <section class="hero lphero" id="hero">
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__content">
+        <img src="logo_top.png" alt="Top Marketing BH" class="lphero__logo reveal" style="height:48px; width:auto; display:block; margin: 0 auto 24px auto;" />
+        <h1 class="lphero__title reveal" data-delay="1">
+          Geramos <span class="accent">10 novos potenciais clientes por dia</span>
+          para o seu negócio por meio do nosso funil validado
+        </h1>
+        <p class="lphero__sub reveal" data-delay="2">Investindo menos de 50 reais por dia</p>
+        <a href="https://wa.me/553197922538?text=Olá!%20Quero%20agendar%20agora." target="_blank" rel="noopener" class="btn btn--cta reveal" data-delay="3">
+          Clique aqui e agende agora!
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6l-6 6" /></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- PARA QUEM É -->
+    <section class="lpsection" id="para-quem">
+      <div class="lpsection__inner">
+        <div class="lpsection__head">
+          <h2 class="lpsection__title reveal">Para quem é</h2>
+          <p class="lpsection__sub reveal" data-delay="1">
+            Essa estratégia é ideal para quem deseja transformar sua presença digital
+            em um sistema previsível de geração de clientes:
+          </p>
+        </div>
+        <div class="audience">
+          <article class="audience__card reveal" data-delay="1">
+            <span class="audience__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M6 21V7l6-4l6 4v14M10 12h4M10 16h4" /></svg></span>
+            <span class="audience__label">Advogados e Escritórios de Advocacia</span>
+          </article>
+          <article class="audience__card reveal" data-delay="2">
+            <span class="audience__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19.5 12.6L12 20l-7.5-7.4a5 5 0 1 1 7.5-6.6a5 5 0 1 1 7.5 6.6z" /></svg></span>
+            <span class="audience__label">Profissionais da Saúde</span>
+          </article>
+          <article class="audience__card reveal" data-delay="3">
+            <span class="audience__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6a3 3 0 0 0 0 6z" /></svg></span>
+            <span class="audience__label">Prestadores de Serviço</span>
+          </article>
+          <article class="audience__card reveal" data-delay="1">
+            <span class="audience__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" /><rect x="9" y="9" width="6" height="6" /></svg></span>
+            <span class="audience__label">Empresas de Tecnologia</span>
+          </article>
+          <article class="audience__card reveal" data-delay="2">
+            <span class="audience__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /></svg></span>
+            <span class="audience__label">Consultorias</span>
+          </article>
+          <article class="audience__card reveal" data-delay="3">
+            <span class="audience__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5l-5-5L1 18" /><path d="M17 6h6v6" /></svg></span>
+            <span class="audience__label">Negócios Digitais</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTADOS REAIS -->
+    <section class="lpsection" id="resultados">
+      <div class="lpsection__inner">
+        <div class="lpsection__head">
+          <h2 class="lpsection__title reveal">Resultados reais que entregamos</h2>
+          <p class="lpsection__sub reveal" data-delay="1">Casos recentes de clientes que aplicaram nossos funis e campanhas:</p>
+        </div>
+        <div class="results">
+          <article class="result reveal" data-delay="1"><p class="result__name">Escritório de Advocacia</p><p class="result__value">R$108.000/mês</p></article>
+          <article class="result reveal" data-delay="2"><p class="result__name">Clínica Médica</p><p class="result__value">R$85.000/mês</p></article>
+          <article class="result reveal" data-delay="3"><p class="result__name">Agência de Serviços</p><p class="result__value">R$40.000/mês</p></article>
+          <article class="result reveal" data-delay="1"><p class="result__name">Oficina Mecânica</p><p class="result__value">R$120.000/mês</p></article>
+          <article class="result reveal" data-delay="2"><p class="result__name">Profissional da Saúde</p><p class="result__value">Agenda 100% preenchida em menos de 30 dias</p></article>
+          <article class="result reveal" data-delay="3"><p class="result__name">Ótica</p><p class="result__value">R$122.000/mês</p></article>
+        </div>
+        <div class="results__note reveal" data-delay="1">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2l4-4" /><circle cx="12" cy="12" r="9" /></svg>
+          <p><strong>Tudo isso sem depender de indicações</strong>, sem viver de redes sociais e sem precisar caçar clientes todos os dias.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O QUE ENTREGAMOS NA PRÁTICA -->
+    <section class="lpsection" id="entregamos">
+      <div class="lpsection__inner">
+        <div class="lpsection__head">
+          <h2 class="lpsection__title reveal">O que entregamos na prática</h2>
+        </div>
+        <div class="deliverables">
+          <div class="deliverable reveal" data-delay="1"><span class="deliverable__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l5 5l10 -10" /></svg></span><span class="deliverable__text">De 30 a 60 novas oportunidades por semana (100+ por mês na sua agenda)</span></div>
+          <div class="deliverable reveal" data-delay="1"><span class="deliverable__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l5 5l10 -10" /></svg></span><span class="deliverable__text">Leads qualificados e prontos para contratar diariamente</span></div>
+          <div class="deliverable reveal" data-delay="1"><span class="deliverable__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l5 5l10 -10" /></svg></span><span class="deliverable__text">Previsibilidade de vendas e faturamento mensal</span></div>
+          <div class="deliverable reveal" data-delay="1"><span class="deliverable__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l5 5l10 -10" /></svg></span><span class="deliverable__text">Campanhas com investimento entre R$40 e R$100/dia</span></div>
+          <div class="deliverable reveal" data-delay="1"><span class="deliverable__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l5 5l10 -10" /></svg></span><span class="deliverable__text">Um sistema que gera caixa mesmo quando você não está vendendo ativamente</span></div>
+        </div>
+        <div class="lpsection__cta reveal" data-delay="1">
+          <a href="https://wa.me/553197922538?text=Olá!%20Quero%20agendar%20agora." target="_blank" rel="noopener" class="btn btn--cta">
+            Clique aqui e agende agora!
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6l-6 6" /></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS — carrossel automático, imagens soltas -->
+    <section class="testi" id="depoimentos">
+      <div class="testi__inner">
+        <div class="testi__head">
+          <span class="testi__eyebrow reveal">Depoimentos</span>
+          <h2 class="testi__title reveal" data-delay="1">O que nossos clientes dizem</h2>
+          <p class="lpsection__sub reveal" data-delay="1">Resultados reais de negócios que transformaram sua captação</p>
+        </div>
+
+        <!-- DEPOIMENTO EM ÁUDIO -->
+        <div class="reveal" data-delay="1" style="max-width:680px;margin:0 auto 3rem;padding:0 1rem;">
+          <div id="audio-card" style="
+            background: linear-gradient(135deg, rgba(37,99,235,0.12) 0%, rgba(37,99,235,0.04) 100%);
+            border: 1px solid rgba(37,99,235,0.35);
+            border-radius: 16px;
+            padding: clamp(1.5rem, 4vw, 2.2rem);
+            position: relative;
+            overflow: hidden;
+          ">
+            <!-- Glow decorativo -->
+            <div aria-hidden="true" style="position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle, rgba(37,99,235,0.18), transparent 70%);pointer-events:none;"></div>
+
+            <!-- Badge -->
+            <span style="
+              display:inline-flex;align-items:center;gap:6px;
+              font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+              color:#2563EB;background:rgba(37,99,235,0.12);border:1px solid rgba(37,99,235,0.3);
+              border-radius:999px;padding:0.35rem 0.85rem;margin-bottom:1.2rem;
+            ">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+              Depoimento em áudio
+            </span>
+
+            <!-- Headline de resultado -->
+            <p style="font-size:clamp(0.8rem,1.2vw,0.9rem);color:rgba(217,214,200,0.6);font-weight:600;margin-bottom:0.4rem;text-transform:uppercase;letter-spacing:0.08em;">Clínica Médica — BH</p>
+            <h3 style="
+              font-family:'Plus Jakarta Sans',sans-serif;
+              font-size:clamp(1.4rem,3vw,2rem);
+              font-weight:800;
+              line-height:1.15;
+              letter-spacing:-0.02em;
+              color:#D9D6C8;
+              margin-bottom:1.4rem;
+            ">
+              De <span style="color:#2563EB;">R$70.000</span> para <span style="color:#2563EB;">R$125.000</span>/mês
+            </h3>
+
+            <!-- Quote -->
+            <blockquote style="
+              border-left:3px solid rgba(37,99,235,0.5);
+              padding-left:1rem;
+              margin:0 0 1.6rem;
+              color:rgba(217,214,200,0.75);
+              font-size:clamp(0.9rem,1.3vw,1rem);
+              line-height:1.65;
+              font-style:italic;
+            ">
+              "Depois que fechamos o contrato, o faturamento deu uma melhorada grande. Na época estava em R$70–75 mil, hoje já estamos em R$125 mil. A agenda está fluindo bem e eu vejo que você acompanha de perto."
+            </blockquote>
+
+            <!-- Player customizado -->
+            <audio id="audioDepo" src="depoimento.ogg" preload="metadata"></audio>
+            <div style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
+              <button id="playBtn" onclick="toggleAudio()" style="
+                display:inline-flex;align-items:center;gap:10px;
+                background:#2563EB;color:#fff;
+                border:none;border-radius:999px;
+                padding:0.75rem 1.6rem;
+                font-family:'Plus Jakarta Sans',sans-serif;
+                font-size:0.95rem;font-weight:700;
+                cursor:pointer;
+                box-shadow:0 8px 24px -6px rgba(37,99,235,0.6);
+                transition:transform 0.2s, background 0.2s, box-shadow 0.2s;
+              "
+              onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 32px -6px rgba(37,99,235,0.8)'"
+              onmouseout="this.style.transform='';this.style.boxShadow='0 8px 24px -6px rgba(37,99,235,0.6)'">
+                <svg id="playIcon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                <span id="playLabel">Ouvir depoimento</span>
+              </button>
+              <span id="audioTime" style="font-size:0.85rem;color:rgba(217,214,200,0.5);font-weight:500;">0:00 / 0:51</span>
+            </div>
+
+            <!-- Barra de progresso -->
+            <div style="margin-top:1rem;background:rgba(217,214,200,0.1);border-radius:999px;height:4px;cursor:pointer;" onclick="seekAudio(event, this)">
+              <div id="audioProgress" style="height:100%;background:#2563EB;border-radius:999px;width:0%;transition:width 0.1s linear;"></div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          var audio = document.getElementById('audioDepo');
+          var playBtn = document.getElementById('playBtn');
+          var playIcon = document.getElementById('playIcon');
+          var playLabel = document.getElementById('playLabel');
+          var progress = document.getElementById('audioProgress');
+          var timeEl = document.getElementById('audioTime');
+
+          function toggleAudio() {
+            if (audio.paused) {
+              audio.play();
+              playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+              playLabel.textContent = 'Pausar';
+            } else {
+              audio.pause();
+              playIcon.innerHTML = '<polygon points="5,3 19,12 5,21"/>';
+              playLabel.textContent = 'Ouvir depoimento';
+            }
+          }
+
+          audio.addEventListener('timeupdate', function() {
+            var pct = (audio.currentTime / audio.duration) * 100 || 0;
+            progress.style.width = pct + '%';
+            var cur = Math.floor(audio.currentTime);
+            var tot = Math.floor(audio.duration) || 51;
+            timeEl.textContent = '0:' + String(Math.floor(cur%60)).padStart(2,'0') + ' / 0:' + String(tot%60 || 51).padStart(2,'0');
+          });
+
+          audio.addEventListener('ended', function() {
+            playIcon.innerHTML = '<polygon points="5,3 19,12 5,21"/>';
+            playLabel.textContent = 'Ouvir depoimento';
+            progress.style.width = '0%';
+          });
+
+          function seekAudio(e, bar) {
+            var rect = bar.getBoundingClientRect();
+            var pct = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = pct * (audio.duration || 51);
+          }
+        </script>
+
+        <div class="testi__carousel reveal" data-delay="1">
+          <div class="testi__viewport">
+            <div class="testi__track" id="testiTrack">
+              <figure class="testi__slide"><img src="/imagens/AutoridadeSite01.jpg" alt="Depoimento 1" /></figure>
+              <figure class="testi__slide"><img src="/imagens/AutoridadeSite02.jpg" alt="Depoimento 2" /></figure>
+              <figure class="testi__slide"><img src="/imagens/AutoridadeSite03.jpg" alt="Depoimento 3" /></figure>
+              <figure class="testi__slide"><img src="/imagens/AutoridadeSite04.jpg" alt="Depoimento 4" /></figure>
+              <figure class="testi__slide"><img src="/imagens/AutoridadeSite05.jpg" alt="Depoimento 5" /></figure>
+              <!-- duplicatas para loop infinito -->
+              <figure class="testi__slide"><img src="/imagens/AutoridadeSite01.jpg" alt="Depoimento 1" /></figure>
+              <figure class="testi__slide"><img src="/imagens/AutoridadeSite02.jpg" alt="Depoimento 2" /></figure>
+              <figure class="testi__slide"><img src="/imagens/AutoridadeSite03.jpg" alt="Depoimento 3" /></figure>
+              <figure class="testi__slide"><img src="/imagens/AutoridadeSite04.jpg" alt="Depoimento 4" /></figure>
+              <figure class="testi__slide"><img src="/imagens/AutoridadeSite05.jpg" alt="Depoimento 5" /></figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA pós-depoimentos -->
+        <div class="lpsection__cta reveal" data-delay="1" style="text-align:center; margin-top: 4rem;">
+
+          <a href="https://wa.me/553197922538?text=Olá!%20Quero%20agendar%20agora." target="_blank" rel="noopener" class="btn btn--cta" style="display:inline-flex; align-items:center;">
+            Quero ter resultados assim
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left: 8px; width: 20px; height: 20px;"><path d="M5 12h14M13 6l6 6l-6 6" /></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="foot">
+    <div class="foot__inner">
+      <div class="foot__top">
+        <div class="foot__about">
+          <img src="logo_top.png" alt="Top Marketing BH" style="height:36px; width:auto; display:block; margin-bottom:16px;" />
+          <p>
+            Somos a Top Marketing BH, uma assessoria de marketing especializada em crescimento e performance.
+            Ajudamos empresas em todo o Brasil a aumentar sua presença digital, gerar mais oportunidades de
+            negócio e vender mais por meio de estratégias personalizadas, tecnologia e decisões orientadas por dados.
+          </p>
+        </div>
+        <div class="foot__contact">
+          <div class="foot__loc">
+            <svg class="foot__flag" viewBox="0 0 28 20" width="28" height="20" role="img" aria-label="Brasil">
+              <rect width="28" height="20" rx="2" fill="#009c3b" />
+              <polygon points="14,2.5 25.5,10 14,17.5 2.5,10" fill="#ffdf00" />
+              <circle cx="14" cy="10" r="3.7" fill="#002776" />
+            </svg>
+            <div class="foot__loc-body">
+              <strong>Belo Horizonte, MG, Brasil.</strong>
+              <p>Rua dos Tupis, 449 - Centro<br />Belo Horizonte - MG<br />CEP 30190-061</p>
+            </div>
+          </div>
+          <div class="foot__details">
+            <p><strong>Telefone:</strong> <a href="tel:+553197922538">(31) 97922-538</a></p>
+            <p><strong>Email:</strong> <a href="mailto:topmarketingbh@gmail.com">topmarketingbh@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="foot__bottom">
+        <p class="foot__copy">Top Marketing BH 2026 | Todos os direitos reservados</p>
+        <nav class="foot__links" aria-label="Links do rodapé">
+          <a href="/politica-de-privacidade.html">Política de privacidade</a>
+          <a href="#topo" class="foot__toplink">
+            Voltar ao topo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7l7 7" /></svg>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de Qualificação -->
+  <div class="modal-overlay" id="qualifyModal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Fechar" onclick="closeModal()">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="modal-title">Pergunta Importante:</div>
+      <div class="modal-text">Você consegue investir pelo menos 40 reais por dia em nossas estratégias que irão escalar seu negócio?</div>
+      <div class="modal-actions">
+        <button class="modal-btn modal-btn--no" onclick="closeModal()">Não</button>
+        <a href="passo2.html" class="modal-btn modal-btn--yes" onclick="closeModal()">Sim</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(e) {
+      if (e) e.preventDefault();
+      document.getElementById('qualifyModal').classList.add('is-active');
+    }
+    function closeModal() {
+      document.getElementById('qualifyModal').classList.remove('is-active');
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const ctas = document.querySelectorAll('.btn--cta, .nav__cta');
+      ctas.forEach(cta => {
+        cta.addEventListener('click', openModal);
+      });
+    });
+  </script>
+
+  <script defer src="js/main.min.js?v=3"></script>
+</body>
+</html>
