@@ -3,12 +3,16 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/qualificacao",
-      "destination": "/oferta-497/qualificacao/index.html"
-    },
-    {
       "source": "/oferta",
       "destination": "/oferta-497/index.html"
+    },
+    {
+      "source": "/oferta/(.*)",
+      "destination": "/oferta-497/$1"
+    },
+    {
+      "source": "/qualificacao",
+      "destination": "/oferta-497/qualificacao/index.html"
     }
   ],
   "headers": [
