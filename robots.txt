@@ -1,6 +1,5 @@
 User-Agent: *
 Allow: /
 Disallow: /api/
-Disallow: /_next/
 
 Sitemap: https://topmarketingbh.com.br/sitemap.xml
