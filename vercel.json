@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/oferta",
-      "destination": "/oferta-497/index.html"
+      "destination": "/oferta-497/"
     },
     {
       "source": "/oferta/(.*)",
@@ -12,7 +12,7 @@
     },
     {
       "source": "/qualificacao",
-      "destination": "/oferta-497/qualificacao/index.html"
+      "destination": "/oferta-497/qualificacao/"
     }
   ],
   "headers": [
