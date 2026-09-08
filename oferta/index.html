@@ -24,7 +24,14 @@
   <meta name="description" content="Geramos até 10 novos potenciais clientes por dia para o seu negócio por meio do nosso funil validado. Agende agora com a Top Marketing BH." />
   <meta name="theme-color" content="#161513" />
   <link rel="icon" href="/icon.png" sizes="any" />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Resource Hints for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+  <link rel="preload" href="css/captacao.min.css?v=8" as="style" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/captacao.min.css?v=8" />
   <style>
     /* ======================================================
@@ -763,11 +770,11 @@
         <div class="testi__carousel reveal" data-delay="1">
           <div class="testi__viewport">
             <div class="testi__track" id="testiTrack">
-              <figure class="testi__slide"><img src="/imagens/AutoridadeSite01.jpg" alt="Depoimento 1" /></figure>
-              <figure class="testi__slide"><img src="/imagens/AutoridadeSite02.jpg" alt="Depoimento 2" /></figure>
-              <figure class="testi__slide"><img src="/imagens/AutoridadeSite03.jpg" alt="Depoimento 3" /></figure>
-              <figure class="testi__slide"><img src="/imagens/AutoridadeSite04.jpg" alt="Depoimento 4" /></figure>
-              <figure class="testi__slide"><img src="/imagens/AutoridadeSite05.jpg" alt="Depoimento 5" /></figure>
+              <figure class="testi__slide"><img src="/imagens/AutoridadeSite01.jpg" alt="Depoimento 1" loading="lazy" decoding="async" /></figure>
+              <figure class="testi__slide"><img src="/imagens/AutoridadeSite02.jpg" alt="Depoimento 2" loading="lazy" decoding="async" /></figure>
+              <figure class="testi__slide"><img src="/imagens/AutoridadeSite03.jpg" alt="Depoimento 3" loading="lazy" decoding="async" /></figure>
+              <figure class="testi__slide"><img src="/imagens/AutoridadeSite04.jpg" alt="Depoimento 4" loading="lazy" decoding="async" /></figure>
+              <figure class="testi__slide"><img src="/imagens/AutoridadeSite05.jpg" alt="Depoimento 5" loading="lazy" decoding="async" /></figure>
               <!-- duplicatas para loop infinito -->
               <figure class="testi__slide"><img src="/imagens/AutoridadeSite01.jpg" alt="Depoimento 1" /></figure>
               <figure class="testi__slide"><img src="/imagens/AutoridadeSite02.jpg" alt="Depoimento 2" /></figure>
