@@ -131,25 +131,49 @@
       background: var(--surface) !important;
       border: 1px solid var(--border) !important;
       border-radius: var(--radius-md) !important;
-      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s !important;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s !important;
       box-shadow: none !important;
+      cursor: default !important;
     }
     .audience__card:hover {
       border-color: var(--border-blue) !important;
-      transform: translateY(-5px) !important;
-      box-shadow: 0 20px 50px -20px rgba(37,99,235,0.4) !important;
+      transform: translateY(-6px) !important;
+      box-shadow: 0 24px 48px -16px rgba(37,99,235,0.35) !important;
       background: var(--surface-2) !important;
     }
     .audience__ic {
-      background: rgba(37,99,235,0.1) !important;
-      border: 1px solid rgba(37,99,235,0.2) !important;
-      color: var(--blue-bright) !important;
-      border-radius: var(--radius-sm) !important;
+      width: 56px !important;
+      height: 56px !important;
+      border-radius: 14px !important;
+      background: linear-gradient(135deg, rgba(37,99,235,0.18) 0%, rgba(99,102,241,0.12) 100%) !important;
+      border: 1px solid rgba(99,102,241,0.25) !important;
+      color: #60a5fa !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: box-shadow 0.3s, transform 0.3s !important;
+      box-shadow: 0 0 0 0 rgba(37,99,235,0) !important;
+    }
+    .audience__ic svg {
+      width: 26px !important;
+      height: 26px !important;
+      stroke-width: 1.6 !important;
+      stroke-linecap: round !important;
+      stroke-linejoin: round !important;
+      fill: none !important;
+      stroke: currentColor !important;
+    }
+    .audience__card:hover .audience__ic {
+      box-shadow: 0 0 20px 4px rgba(37,99,235,0.3) !important;
+      transform: scale(1.08) !important;
+      background: linear-gradient(135deg, rgba(37,99,235,0.28) 0%, rgba(99,102,241,0.2) 100%) !important;
+      border-color: rgba(99,102,241,0.5) !important;
     }
     .audience__label {
       color: var(--text) !important;
       font-size: 0.95rem !important;
       font-weight: 600 !important;
+      line-height: 1.4 !important;
     }
 
     /* ===== RESULTS CARDS ===== */
@@ -471,27 +495,39 @@
         </div>
         <div class="audience">
           <article class="audience__card reveal" data-delay="1">
-            <span class="audience__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M6 21V7l6-4l6 4v14M10 12h4M10 16h4" /></svg></span>
+            <span class="audience__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3L4 9v12h5v-6h6v6h5V9L12 3z"/><path d="M9 21v-6h6v6"/></svg>
+            </span>
             <span class="audience__label">Advogados e Escritórios de Advocacia</span>
           </article>
           <article class="audience__card reveal" data-delay="2">
-            <span class="audience__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19.5 12.6L12 20l-7.5-7.4a5 5 0 1 1 7.5-6.6a5 5 0 1 1 7.5 6.6z" /></svg></span>
+            <span class="audience__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </span>
             <span class="audience__label">Profissionais da Saúde</span>
           </article>
           <article class="audience__card reveal" data-delay="3">
-            <span class="audience__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6a3 3 0 0 0 0 6z" /></svg></span>
+            <span class="audience__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </span>
             <span class="audience__label">Prestadores de Serviço</span>
           </article>
           <article class="audience__card reveal" data-delay="1">
-            <span class="audience__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" /><rect x="9" y="9" width="6" height="6" /></svg></span>
+            <span class="audience__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </span>
             <span class="audience__label">Empresas de Tecnologia</span>
           </article>
           <article class="audience__card reveal" data-delay="2">
-            <span class="audience__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /></svg></span>
+            <span class="audience__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
             <span class="audience__label">Consultorias</span>
           </article>
           <article class="audience__card reveal" data-delay="3">
-            <span class="audience__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5l-5-5L1 18" /><path d="M17 6h6v6" /></svg></span>
+            <span class="audience__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            </span>
             <span class="audience__label">Negócios Digitais</span>
           </article>
         </div>
