@@ -39,8 +39,9 @@ export default async function handler(req, res) {
     }
 
     // 2. Preparar e enviar para Meta Conversions API (CAPI)
-    const metaPixelId = process.env.META_PIXEL_ID;
+    const metaPixelId    = process.env.META_PIXEL_ID;
     const metaAccessToken = process.env.META_ACCESS_TOKEN;
+    const testEventCode   = process.env.META_TEST_EVENT_CODE || null; // opcional — apenas para testes
 
     if (metaPixelId && metaAccessToken) {
       try {
@@ -67,7 +68,7 @@ export default async function handler(req, res) {
               event_name: 'Lead',
               event_time: Math.floor(Date.now() / 1000),
               event_id: eventId,
-              event_source_url: payload.page_url,
+              event_source_url: payload.page_url || payload.landing_page,
               action_source: 'website',
               user_data: {
                 client_ip_address: payload.ip,
@@ -82,7 +83,9 @@ export default async function handler(req, res) {
                 origem: payload.origem
               }
             }
-          ]
+          ],
+          // test_event_code incluído SOMENTE se META_TEST_EVENT_CODE estiver preenchido
+          ...(testEventCode ? { test_event_code: testEventCode } : {})
         };
 
         const metaUrl = `https://graph.facebook.com/v21.0/${metaPixelId}/events?access_token=${metaAccessToken}`;
@@ -94,10 +97,17 @@ export default async function handler(req, res) {
         });
 
         const metaResult = await metaResponse.json();
-        console.log(`[API Leads] CAPI response (${eventId}):`, JSON.stringify(metaResult));
-        
+
+        // Log seguro — sem token, sem PII, sem test_event_code completo
+        console.log('[META CAPI]', {
+          lead_id:    payload.lead_id,
+          event_id:   eventId,
+          test_mode:  Boolean(testEventCode),
+          status:     metaResponse.status
+        });
+
         if (!metaResponse.ok) {
-          console.error(`[API Leads] CAPI erro HTTP ${metaResponse.status}:`, JSON.stringify(metaResult));
+          console.error('[META CAPI] Erro retornado pela API:', JSON.stringify(metaResult?.error || metaResult));
         }
       } catch (metaErr) {
         console.error(`[API Leads] Erro ao enviar para Meta CAPI:`, metaErr);
