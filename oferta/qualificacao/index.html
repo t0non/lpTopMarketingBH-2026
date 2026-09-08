@@ -338,47 +338,25 @@
     <div class="step" id="step4">
       <h2 class="question-title">Quanto você pretende investir por mês em marketing? <span>*</span></h2>
       <p class="question-desc">Seja sincero(a), não há resposta certa ou errada.</p>
-      <div class="options-list">
-        <button class="option-btn" onclick="selectOption('investimento', 'R$1.000 a R$2.000', 4)">
+      <div class="options-list" id="investimentoOptions">
+        <button class="option-btn" onclick="selectAndSubmit('R$1.000 a R$2.000')">
           <span class="option-letter">A</span> R$1.000 a R$2.000
         </button>
-        <button class="option-btn" onclick="selectOption('investimento', 'R$2.000 a R$5.000', 4)">
+        <button class="option-btn" onclick="selectAndSubmit('R$2.000 a R$5.000')">
           <span class="option-letter">B</span> R$2.000 a R$5.000
         </button>
-        <button class="option-btn" onclick="selectOption('investimento', 'R$5.000 a R$10.000', 4)">
+        <button class="option-btn" onclick="selectAndSubmit('R$5.000 a R$10.000')">
           <span class="option-letter">C</span> R$5.000 a R$10.000
         </button>
-        <button class="option-btn" onclick="selectOption('investimento', 'Acima de R$10.000', 4)">
+        <button class="option-btn" onclick="selectAndSubmit('Acima de R$10.000')">
           <span class="option-letter">D</span> Acima de R$10.000
-        </button>
-      </div>
-    </div>
-
-    <!-- STEP 5: Serviço -->
-    <div class="step" id="step5">
-      <h2 class="question-title">Qual serviço você procura? <span>*</span></h2>
-      <div class="options-list" id="servicoOptions">
-        <button class="option-btn" onclick="submitForm('Tráfego Pago')">
-          <span class="option-letter">A</span> Tráfego Pago
-        </button>
-        <button class="option-btn" onclick="submitForm('Criação de Site')">
-          <span class="option-letter">B</span> Criação de Site
-        </button>
-        <button class="option-btn" onclick="submitForm('Google / Perfil da Empresa')">
-          <span class="option-letter">C</span> Google / Perfil da Empresa
-        </button>
-        <button class="option-btn" onclick="submitForm('Pacote completo')">
-          <span class="option-letter">D</span> Pacote completo
-        </button>
-        <button class="option-btn" onclick="submitForm('Ainda não sei')">
-          <span class="option-letter">E</span> Ainda não sei
         </button>
       </div>
       <div id="submitError" class="error-msg">Ocorreu um erro ao enviar. Tente novamente.</div>
     </div>
     
-    <!-- STEP 6: Sucesso -->
-    <div class="step" id="step6" style="text-align: center; margin-top: 4rem;">
+    <!-- STEP 5: Sucesso -->
+    <div class="step" id="step5" style="text-align: center; margin-top: 4rem;">
       <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 1rem auto; display:block;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
       <h2 class="question-title" style="margin-bottom:1rem;">Obrigado, <span id="successNome"></span>!</h2>
       <p class="question-desc">Recebemos seus dados. Vamos direcionar você para o WhatsApp em instantes...</p>
@@ -401,7 +379,7 @@
 
     // Form logic
     let currentStep = 1;
-    const totalSteps = 5; // Step 6 is success
+    const totalSteps = 4; // Step 5 is success
     let isSubmitting = false;
 
     const formData = {
@@ -412,12 +390,11 @@
       email: '',
       empresa: '',
       segmento: '',
-      investimento: '',
-      servico: ''
+      investimento: ''
     };
 
     function updateView() {
-      for(let i=1; i<=6; i++) {
+      for(let i=1; i<=5; i++) {
         const el = document.getElementById(`step${i}`);
         if(el) el.classList.remove('active');
       }
@@ -438,8 +415,12 @@
 
     function selectOption(field, value, step) {
       formData[field] = value;
-      currentStep = step + 1;
-      updateView();
+      updateView(); // selectOption agora nao avanca mais, selectAndSubmit cuida disso
+    }
+
+    function selectAndSubmit(investimento) {
+      formData.investimento = investimento;
+      submitForm();
     }
 
     function nextStep(step) {
@@ -475,19 +456,15 @@
       }
     }
 
-    async function submitForm(servico) {
+    async function submitForm() {
       if (isSubmitting) return;
-      formData.servico = servico;
       isSubmitting = true;
 
       // Desabilitar botões
-      const buttons = document.querySelectorAll('#servicoOptions button');
+      const buttons = document.querySelectorAll('#investimentoOptions button');
       buttons.forEach(b => {
         b.style.opacity = '0.5';
         b.style.pointerEvents = 'none';
-        if(b.innerText.includes(servico)) {
-          b.innerHTML = 'Enviando...';
-        }
       });
       document.getElementById('submitError').style.display = 'none';
 
@@ -531,7 +508,7 @@
           }
 
           document.getElementById('successNome').innerText = formData.nome.split(' ')[0];
-          currentStep = 6;
+          currentStep = 5; // step 5 = sucesso
           updateView();
 
           // Redirect para Whats
@@ -556,11 +533,10 @@
           b.style.opacity = '1';
           b.style.pointerEvents = 'auto';
         });
-        document.querySelector('#servicoOptions button:nth-child(1)').innerHTML = '<span class="option-letter">A</span> Tráfego Pago';
-        document.querySelector('#servicoOptions button:nth-child(2)').innerHTML = '<span class="option-letter">B</span> Criação de Site';
-        document.querySelector('#servicoOptions button:nth-child(3)').innerHTML = '<span class="option-letter">C</span> Google / Perfil da Empresa';
-        document.querySelector('#servicoOptions button:nth-child(4)').innerHTML = '<span class="option-letter">D</span> Pacote completo';
-        document.querySelector('#servicoOptions button:nth-child(5)').innerHTML = '<span class="option-letter">E</span> Ainda não sei';
+        document.querySelector('#investimentoOptions button:nth-child(1)').innerHTML = '<span class="option-letter">A</span> R$1.000 a R$2.000';
+        document.querySelector('#investimentoOptions button:nth-child(2)').innerHTML = '<span class="option-letter">B</span> R$2.000 a R$5.000';
+        document.querySelector('#investimentoOptions button:nth-child(3)').innerHTML = '<span class="option-letter">C</span> R$5.000 a R$10.000';
+        document.querySelector('#investimentoOptions button:nth-child(4)').innerHTML = '<span class="option-letter">D</span> Acima de R$10.000';
         isSubmitting = false;
       }
     }
