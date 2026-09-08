@@ -85,15 +85,20 @@ export default async function handler(req, res) {
           ]
         };
 
-        const metaUrl = `https://graph.facebook.com/v19.0/${metaPixelId}/events?access_token=${metaAccessToken}`;
+        const metaUrl = `https://graph.facebook.com/v21.0/${metaPixelId}/events?access_token=${metaAccessToken}`;
         
-        await fetch(metaUrl, {
+        const metaResponse = await fetch(metaUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(capiPayload)
         });
+
+        const metaResult = await metaResponse.json();
+        console.log(`[API Leads] CAPI response (${eventId}):`, JSON.stringify(metaResult));
         
-        console.log(`[API Leads] Evento Lead enviado para Meta CAPI (${eventId})`);
+        if (!metaResponse.ok) {
+          console.error(`[API Leads] CAPI erro HTTP ${metaResponse.status}:`, JSON.stringify(metaResult));
+        }
       } catch (metaErr) {
         console.error(`[API Leads] Erro ao enviar para Meta CAPI:`, metaErr);
       }

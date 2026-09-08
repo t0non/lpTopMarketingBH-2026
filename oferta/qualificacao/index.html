@@ -502,9 +502,10 @@
         const data = await response.json();
 
         if (response.ok) {
-          // Sucesso
-          if(typeof fbq !== 'undefined') {
-            fbq('track', 'Lead', {}, { eventID: formData.event_id });
+          // Dispara Lead no Pixel usando o event_id confirmado pela API (deduplicação com CAPI)
+          const confirmedEventId = (data && data.event_id) ? data.event_id : formData.event_id;
+          if (typeof fbq !== 'undefined') {
+            fbq('track', 'Lead', {}, { eventID: confirmedEventId });
           }
 
           document.getElementById('successNome').innerText = formData.nome.split(' ')[0];
