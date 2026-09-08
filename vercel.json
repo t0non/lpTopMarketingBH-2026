@@ -1,6 +1,13 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/qualificacao",
+      "destination": "/oferta/qualificacao",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/_next/static/(.*)",
