@@ -1,0 +1,15 @@
+# Dependências
+node_modules/
+.next/
+
+# Variáveis de ambiente — NUNCA commitar estes arquivos
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+
+# Misc
+.DS_Store
+Thumbs.db

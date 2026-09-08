@@ -1,20 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/oferta",
-      "destination": "/oferta-497/"
-    },
-    {
-      "source": "/oferta/(.*)",
-      "destination": "/oferta-497/$1"
-    },
-    {
-      "source": "/qualificacao",
-      "destination": "/oferta-497/qualificacao/"
-    }
-  ],
   "headers": [
     {
       "source": "/_next/static/(.*)",
